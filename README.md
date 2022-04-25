@@ -21,6 +21,7 @@
 
 - Requirment: download and install sonar-scanner (OS dependent)
 - Generate token
-- execute: `sonar-scanner.bat -D"sonar.projectKey=etbaas-frontend" -D"sonar.sources=." -D"sonar.host.url={{ SONAR_HOST_URL }}" -D"sonar.login={{ SONAR_TOKEN }}"`
+- execute:  
+  `sonar-scanner.bat -D"sonar.projectKey=etbaas-frontend" -D"sonar.sources=." -D"sonar.host.url={{ SONAR_HOST_URL }}" -D"sonar.login={{ SONAR_TOKEN }}"`
 
 ## sonarqube-demo
