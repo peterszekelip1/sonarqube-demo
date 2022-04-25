@@ -34,14 +34,14 @@ public class CalculatorController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("Multiply")]
+    [HttpGet("multiply")]
     public IActionResult Multiply(int a, int b)
     {
         var result = _calculator.Multiply(a, b);
         return Ok(result);
     }
 
-    [HttpGet("Power")]
+    [HttpGet("power")]
     public IActionResult Power(int a, int b)
     {
         var result = _calculator.Power(a, b);
