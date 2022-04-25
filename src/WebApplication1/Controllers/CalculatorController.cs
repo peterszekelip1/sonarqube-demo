@@ -26,4 +26,25 @@ public class CalculatorController : ControllerBase
         var result = _calculator.Subtract(a, b);
         return Ok(result);
     }
+
+    [HttpGet("divide")]
+    public IActionResult Divide (int a, int b)
+    {
+        var result = _calculator.Divide(a, b);
+        return Ok(result);
+    }
+
+    [HttpGet("Multiply")]
+    public IActionResult Multiply(int a, int b)
+    {
+        var result = _calculator.Multiply(a, b);
+        return Ok(result);
+    }
+
+    [HttpGet("Power")]
+    public IActionResult Power(int a, int b)
+    {
+        var result = _calculator.Power(a, b);
+        return Ok(result);
+    }
 }
