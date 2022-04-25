@@ -26,4 +26,28 @@ public class Calculator
     {
         return (int)Math.Pow(a, b);
     }
+
+    public int Factorial(int a)
+    {
+        var result = 1;
+        for (var i = 1; i <= a; i++)
+        {
+            result *= i;
+        }
+        return result;
+    }
+
+    public int Fibonacci(int a)
+    {
+        var result = 0;
+        var prev = 0;
+        var current = 1;
+        for (var i = 0; i < a; i++)
+        {
+            result = prev + current;
+            prev = current;
+            current = result;
+        }
+        return result;
+    }
 }

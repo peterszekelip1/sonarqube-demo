@@ -65,4 +65,32 @@ public class UnitTest1
 
         result.Should().Be(expectedResult);
     }
+
+    [Theory]
+    [InlineData(0, 1)]
+    [InlineData(1, 1)]
+    [InlineData(2, 2)]
+    [InlineData(3, 6)]
+    [InlineData(10, 3628800)]
+    public void Factorial(int a, int expectedResult)
+    {
+        var calculator = new Calculator();
+        var result = calculator.Factorial(a);
+
+        result.Should().Be(expectedResult);
+    }
+
+    [Theory]
+    [InlineData(0, 0)]
+    [InlineData(1, 1)]
+    [InlineData(2, 2)]
+    [InlineData(3, 3)]
+    [InlineData(10, 89)]
+    public void Fibonacci(int a, int expectedResult)
+    {
+        var calculator = new Calculator();
+        var result = calculator.Fibonacci(a);
+
+        result.Should().Be(expectedResult);
+    }
 }
