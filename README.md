@@ -1,5 +1,11 @@
 # Sonarqube demo
 
+- General overview about sonarqube
+- How to integrate it to the daily routines (when using locally with Rider / Visual Studio)
+- How to integrate it to the pipelines running on Github
+- Language support (c#, but also Typescript / React)
+- What are some interesting “smart” checks it can do for code quality and architecture?
+
 ## General notes
 
 - default branch is master (rename to "main" branch beforehand, if needed)

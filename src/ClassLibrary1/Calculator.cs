@@ -1,5 +1,13 @@
 ﻿namespace ClassLibrary1;
 
+public class Foo<T>
+{
+    public string Echo(string s)
+    {
+        return s;
+    }
+}
+
 public class Calculator
 {
     public int Add(int a, int b)
