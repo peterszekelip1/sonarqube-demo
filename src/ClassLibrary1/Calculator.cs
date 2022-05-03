@@ -4,6 +4,11 @@ public class Calculator
 {
     public int Echo(int value)
     {
+        if (value < 0)
+        {
+            return Multiply(value, -1);
+        }
+        
         return value;
     }
     
