@@ -19,8 +19,9 @@
 ## Integrate to Rider / VS
 
 - Extension to Rider / VS / VS Code
-- Warning before commit
 - Run scans locally (sonar-scanner)
+- Scan before commit
+- Show results in the IDE (file or solution)
 
 ## dotnet csharp
 

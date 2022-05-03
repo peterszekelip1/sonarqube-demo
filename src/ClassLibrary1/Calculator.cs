@@ -2,6 +2,11 @@
 
 public class Calculator
 {
+    public int Echo(int value)
+    {
+        return value;
+    }
+    
     public int Add(int a, int b)
     {
         return a + b;
