@@ -49,6 +49,7 @@
 
 ## Notes
 
+- Public endpoint via ngrok
 - Application vs Project
 - default branch is master (rename to "main" branch beforehand, if needed)
 - GitHub security analysis (https://docs.github.com/en/code-security)
