@@ -17,17 +17,19 @@ jobs:
   build-and-deploy-manual:
     runs-on: ubuntu-latest
     steps:
+      - name: Branch name
+        run: echo Running on branch ${GITHUB_REF##*/}
       - run: |
           echo "Github ref is ${{ github.ref }}"
           echo "Target environment is ${{ github.event.inputs.target_environment }}"
       - if: github.event.inputs.target_environment == 'Test'
         run: |
-          echo "Deploy ${{ github.ref }} branch to TEST"
+          echo "Deploy to TEST"
       - if: github.event.inputs.target_environment == 'Staging'
         run: |
-          echo "Latest ref is master >> deploy to STAGING"
+          echo "Deploy to STAGING"
       - if: startsWith(github.ref, 'refs/tags/') && github.event.inputs.target_environment == ''
         run: |
-          echo "Latest ref is tags >> deploy to PRODUCTION"
+          echo "Deploy to PRODUCTION"
       - run: |
           echo "done"
