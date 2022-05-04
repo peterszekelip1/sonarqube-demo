@@ -5,7 +5,7 @@ on:
       - 'v*'
   workflow_dispatch:
     inputs:
-        environment:
+        target_environment:
           description: 'The target environment to deploy to'
           required: true
           default: 'Test' 
@@ -19,14 +19,14 @@ jobs:
     steps:
       - run: |
           echo "Github ref is ${{ github.ref }}"
-          echo "Target environment is ${{ github.event.inputs.environment }}"
-      - if: github.event.inputs.environment == 'Test'
+          echo "Target environment is ${{ github.event.inputs.target_environment }}"
+      - if: github.event.inputs.target_environment == 'Test'
         run: |
-          echo "Latest ref is develop >> deploy to TEST"
-      - if: github.event.inputs.environment == 'Staging'
+          echo "Deploy ${{ github.ref }} branch to TEST"
+      - if: github.event.inputs.target_environment == 'Staging'
         run: |
           echo "Latest ref is master >> deploy to STAGING"
-      - if: startsWith(github.ref, 'refs/tags/') && github.event.inputs.environment == ''
+      - if: startsWith(github.ref, 'refs/tags/') && github.event.inputs.target_environment == ''
         run: |
           echo "Latest ref is tags >> deploy to PRODUCTION"
       - run: |
