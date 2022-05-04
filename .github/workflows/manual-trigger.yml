@@ -1,0 +1,33 @@
+name: Build and Deploy Manually
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+        environment:
+          description: 'The target environment to deploy to'
+          required: true
+          default: 'Test' 
+          type: choice
+          options:
+          - Test
+          - Staging
+jobs:
+  build-and-deploy-manual:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Github ref is ${{ github.ref }}"
+          echo "Target environment is ${{ github.event.inputs.environment }}"
+      - if: github.event.inputs.environment == 'Test'
+        run: |
+          echo "Latest ref is develop >> deploy to TEST"
+      - if: github.event.inputs.environment == 'Staging'
+        run: |
+          echo "Latest ref is master >> deploy to STAGING"
+      - if: startsWith(github.ref, 'refs/tags/') && github.event.inputs.environment == ''
+        run: |
+          echo "Latest ref is tags >> deploy to PRODUCTION"
+      - run: |
+          echo "done"
