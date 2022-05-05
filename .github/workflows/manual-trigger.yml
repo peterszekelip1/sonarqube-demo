@@ -1,6 +1,8 @@
 name: Build and Deploy Manually
 on:
   push:
+    branches:
+      - "*"
     tags:
       - 'v*'
   workflow_dispatch:
