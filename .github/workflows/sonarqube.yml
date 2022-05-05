@@ -1,12 +1,7 @@
 name: SonarQube 
 on:
-  push:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to run against'
-        type: environment
-        required: true 
+  # push:
+  workflow_dispatch: 
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
