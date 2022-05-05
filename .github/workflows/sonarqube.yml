@@ -1,7 +1,7 @@
 name: SonarQube 
 on:
   # push:
-  workflow_dispatch:    
+  workflow_dispatch: 
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -47,8 +47,6 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       - name: SonarQube Quality Gate check
         uses: sonarsource/sonarqube-quality-gate-action@master
-        with:
-          scanMetadataReportFile: .sonarqube/out/.sonar/report-task.txt
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
