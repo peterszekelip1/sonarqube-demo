@@ -1,8 +1,27 @@
 # Sonarqube demo
-test
-## General notes
 
-- default branch is master (rename to "main" branch beforehand, if needed)
+- General overview about sonarqube
+- How to integrate it to the daily routines (when using locally with Rider / Visual Studio)
+- How to integrate it to the pipelines running on Github
+- Language support (c#, but also Typescript / React)
+- What are some interesting “smart” checks it can do for code quality and architecture?
+
+## General overview
+
+- SAST (Static Application Security Testing)
+- SonarQube - on-prem
+- SonarCloud - hosted
+- Not
+  - DAST (Dynamic Application Security Testing)
+  - IAST (Interactive Application Security Testing)
+  - RASP (Runtime Applicaiton Self-Protection)
+
+## Integrate to Rider / VS
+
+- Extension to Rider / VS / VS Code
+- Run scans locally (sonar-scanner)
+- Scan before commit
+- Show results in the IDE (file or solution)
 
 ## dotnet csharp
 
@@ -28,4 +47,9 @@ test
 - execute:  
   `sonar-scanner.bat -D"sonar.projectKey={{ SONAR_PROJECT_KEY }}" -D"sonar.sources=." -D"sonar.host.url={{ SONAR_HOST_URL }}" -D"sonar.login={{ SONAR_TOKEN }}"`
 
-## sonarqube-demo
+## Notes
+
+- Public endpoint via ngrok
+- Application vs Project
+- default branch is master (rename to "main" branch beforehand, if needed)
+- GitHub security analysis (https://docs.github.com/en/code-security)

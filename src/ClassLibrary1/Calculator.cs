@@ -2,6 +2,23 @@
 
 public class Calculator
 {
+    public string ParityCheck(int value)
+    {
+        var parity = value % 2 == 0 ? Parity.Even : Parity.Odd;
+
+        return "The parity of number " + value + ": " + parity;
+    }
+    
+    public int Echo(int value)
+    {
+        if (value < 0)
+        {
+            return Multiply(value, -1);
+        }
+        
+        return value;
+    }
+    
     public int Add(int a, int b)
     {
         return a + b;

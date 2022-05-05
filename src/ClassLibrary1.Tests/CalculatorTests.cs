@@ -93,4 +93,15 @@ public class UnitTest1
 
         result.Should().Be(expectedResult);
     }
+
+    [Fact]
+    public void Echo()
+    {
+        const int value = 42;
+        
+        var calculator = new Calculator();
+        var result = calculator.Echo(value);
+
+        result.Should().Be(42);
+    }
 }
