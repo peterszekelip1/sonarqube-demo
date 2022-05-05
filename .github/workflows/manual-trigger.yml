@@ -12,7 +12,6 @@ on:
           type: choice
           options:
           - Test
-          - Staging
 jobs:
   build-and-deploy-manual:
     runs-on: ubuntu-latest
@@ -25,7 +24,7 @@ jobs:
       - if: github.event.inputs.target_environment == 'Test'
         run: |
           echo "Deploy to TEST"
-      - if: github.event.inputs.target_environment == 'Staging'
+      - if: github.ref == 'refs/heads/main' && github.event.inputs.target_environment == ''
         run: |
           echo "Deploy to STAGING"
       - if: startsWith(github.ref, 'refs/tags/') && github.event.inputs.target_environment == ''
