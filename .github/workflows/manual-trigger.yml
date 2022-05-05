@@ -23,6 +23,7 @@ jobs:
       - run: |
           echo "Github ref is ${{ github.ref }}"
           echo "Target environment is ${{ github.event.inputs.target_environment }}"
+          echo "BaseRef is ${{ github.event.base_ref }}"
       - if: github.event.inputs.target_environment == 'Test'
         run: |
           echo "Deploy to TEST"
