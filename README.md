@@ -1,5 +1,5 @@
 # Sonarqube demo
-
+test
 ## General notes
 
 - default branch is master (rename to "main" branch beforehand, if needed)
