@@ -2,7 +2,7 @@ name: Build and Deploy Manually
 on:
   push:
     branches:
-      - "master"
+      - "main"
     tags:
       - 'v*'
 jobs:
