@@ -10,12 +10,9 @@ jobs:
   build-and-deploy-manual:
     runs-on: ubuntu-latest
     steps:
-      - name: Branch name
-        run: echo Running on branch ${GITHUB_REF##*/}
       - run: |
           echo "Github ref is ${{ github.ref }}"
-          echo "Target environment is ${{ github.event.inputs.target_environment }}"
-      - if: github.ref != 'refs/heads/main'
+      - if: github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/tags/')
         run: |
           echo "Deploy to TEST"
       - if: github.ref == 'refs/heads/main'
